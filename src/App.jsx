@@ -450,40 +450,29 @@ function ResultScreen({ checks, onRetry }) {
 
         {/* CTA */}
         <div style={{ display: "flex", flexDirection: "column", gap: 12, animation: "fadeUp .4s .35s both" }}>
-          {(needCleaning || noBad) && (
-            <a href={INQUIRY_URL} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-              <div style={{
-                fontFamily: KO, fontWeight: 700, fontSize: 15,
-                padding: "16px 20px", cursor: "pointer",
-                background: LIGHT, color: DARK,
-                border: `2px solid ${LIGHT}`,
-                display: "flex", justifyContent: "space-between", alignItems: "center",
-                boxShadow: `4px 4px 0 ${DARK}`,
-                animation: needCleaning ? "ctaBounce 2s ease-in-out infinite" : "none",
-                letterSpacing: .3,
-              }}>
-                <span>🧹 오피스 클리닝 알아보기</span>
-                <span style={{ fontFamily: PIXEL, fontSize: 10 }}>▶</span>
-              </div>
-            </a>
-          )}
-          {(needMove || noBad) && (
-            <a href={INQUIRY_URL} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-              <div style={{
-                fontFamily: KO, fontWeight: 700, fontSize: 15,
-                padding: "16px 20px", cursor: "pointer",
-                background: DARK, color: LIGHT,
-                border: `2px solid ${DARK}`,
-                display: "flex", justifyContent: "space-between", alignItems: "center",
-                boxShadow: `4px 4px 0 #000`,
-                animation: needMove ? "ctaBounce 2s .2s ease-in-out infinite" : "none",
-                letterSpacing: .3,
-              }}>
-                <span>📦 무브 서비스 알아보기</span>
-                <span style={{ fontFamily: PIXEL, fontSize: 10 }}>▶</span>
-              </div>
-            </a>
-          )}
+          {/* 후킹 문구 */}
+          <div style={{
+            fontFamily: KO, fontSize: 13, color: "#777",
+            textAlign: "center", lineHeight: 1.8,
+          }}>
+            직접 하려고 하지 마세요. <span style={{ color: LIGHT, fontWeight: 700 }}>레터스가 합니다.</span>
+          </div>
+          {/* 단일 CTA 버튼 */}
+          <a href={INQUIRY_URL} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+            <div style={{
+              fontFamily: KO, fontWeight: 700, fontSize: 16,
+              padding: "18px 20px", cursor: "pointer",
+              background: RED, color: "#fff",
+              border: `2px solid ${RED}`,
+              display: "flex", justifyContent: "space-between", alignItems: "center",
+              boxShadow: `4px 4px 0 #7a1a00, 0 0 20px ${RED}44`,
+              animation: "ctaBounce 2s ease-in-out infinite",
+              letterSpacing: .3,
+            }}>
+              <span>🏢 우리 사무실 되살리기</span>
+              <span style={{ fontFamily: PIXEL, fontSize: 10 }}>▶</span>
+            </div>
+          </a>
           <button onClick={onRetry} style={{
             fontFamily: PIXEL, fontSize: 7, padding: "11px", background: "transparent",
             color: "#333", border: "1px solid #2a2a44", cursor: "pointer",
